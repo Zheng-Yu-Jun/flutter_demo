@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'ContainerDemo.dart';
 import 'gridview_demo.dart';
 import 'listview_demo.dart';
+import 'stack_demo.dart';
 
 /***
  * 程序主入口
@@ -20,7 +21,8 @@ class MainActiivty extends StatelessWidget {
       routes: {
         "/container": (context) => ContainerDemo(),
         "/gridview": (context) => Gridview_Demo(),
-        "/listview": (context) => ListView_Demo()
+        "/listview": (context) => ListView_Demo(),
+        "/stack":(context)=>Stack_Demo()
       },
       home: ContentOfMainActivity(),
     );
@@ -52,7 +54,12 @@ class ContentOfMainActivity extends StatelessWidget {
               onPressed: () {
                 Navigator.pushNamed(context, "/listview");
               },
-              child: Text('ListView', style: TextStyle(fontSize: 25)))
+              child: Text('ListView', style: TextStyle(fontSize: 25))),
+          RaisedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/stack");
+              },
+              child: Text('Stack', style: TextStyle(fontSize: 25)))
         ],
       ),
     );
